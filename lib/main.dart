@@ -1,5 +1,6 @@
 import 'package:bereal/Routes/routes.dart';
 import 'package:bereal/Screens/MainScreens/main.dart';
+import 'package:bereal/Themes/Themes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       getPages: AppPage.routes,
       initialRoute: AppPage.main,
-      theme: ThemeData.light(),
+      theme: AppTheme.light,
       debugShowCheckedModeBanner: false,
     );
   }

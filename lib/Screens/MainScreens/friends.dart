@@ -1,3 +1,4 @@
+import 'package:bereal/Widgets/Card.dart';
 import 'package:flutter/material.dart';
 
 class FriendsPage extends StatelessWidget {
@@ -8,7 +9,7 @@ class FriendsPage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: const[
-          Text('Arkadaşlar')
+          CardWidget()
         ],
       ),
     );
