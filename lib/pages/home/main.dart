@@ -1,9 +1,9 @@
-import 'package:bereal/Screens/MainScreens/discover.dart';
-import 'package:bereal/Screens/MainScreens/friends.dart';
-import 'package:bereal/Themes/Themes.dart';
+import 'package:bereal/themes/Themes.dart';
 import 'package:flutter/material.dart';
 
-import '../../Widgets/AppBar.dart';
+import '../../widgets/appbar_widget.dart';
+import 'discover.dart';
+import 'friends.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -17,10 +17,10 @@ class MainPage extends StatelessWidget {
         body: Column(
           children: [
             Container(
-              color: Colors.black,
-              child:  TabBar(
+              color: Colors.transparent,
+              child: TabBar(
                   padding: const EdgeInsets.symmetric(horizontal: 90.0),
-                  indicatorColor: AppTheme.light.tabBarTheme.indicatorColor,
+                  indicatorColor: Colors.black,
                   labelColor: AppTheme.light.tabBarTheme.labelColor,
                   tabs: const [
                     Tab(
@@ -31,10 +31,8 @@ class MainPage extends StatelessWidget {
                     )
                   ]),
             ),
-            const Expanded(child: TabBarView(children: [
-              FriendsPage(),
-              DiscoverPage()
-            ]))
+            const Expanded(
+                child: TabBarView(children: [FriendsPage(), DiscoverPage()]))
           ],
         ),
       ),

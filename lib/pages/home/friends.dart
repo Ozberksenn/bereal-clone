@@ -1,4 +1,4 @@
-import 'package:bereal/Widgets/Card.dart';
+import 'package:bereal/widgets/story_card_widget.dart';
 import 'package:flutter/material.dart';
 
 class FriendsPage extends StatelessWidget {
@@ -6,12 +6,6 @@ class FriendsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: const[
-          CardWidget()
-        ],
-      ),
-    );
+    return Scaffold(body: StoryCardWidget());
   }
 }

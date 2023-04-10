@@ -11,7 +11,9 @@ ThemeData lightTheme = ThemeData(
   appBarTheme: const AppBarTheme(backgroundColor: Colors.black),
   textTheme: const TextTheme(
       titleLarge: TextStyle(color: Colors.white),
-      headlineSmall: TextStyle(color: Colors.white)),
+      headlineLarge: TextStyle(color: Colors.white, fontSize: 26),
+      headlineMedium: TextStyle(color: Colors.white, fontSize: 18),
+      headlineSmall: TextStyle(color: Colors.white, fontSize: 16)),
   tabBarTheme:
       const TabBarTheme(indicatorColor: Colors.black, labelColor: Colors.white),
 );
