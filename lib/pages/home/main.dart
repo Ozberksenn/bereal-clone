@@ -1,5 +1,6 @@
 import 'package:bereal/themes/Themes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../widgets/appbar_widget.dart';
 import 'discover.dart';
@@ -19,7 +20,7 @@ class MainPage extends StatelessWidget {
             Container(
               color: Colors.transparent,
               child: TabBar(
-                  padding: const EdgeInsets.symmetric(horizontal: 90.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 50.0),
                   indicatorColor: Colors.black,
                   labelColor: AppTheme.light.tabBarTheme.labelColor,
                   tabs: const [
@@ -31,7 +32,7 @@ class MainPage extends StatelessWidget {
                     )
                   ]),
             ),
-            const Expanded(
+            Expanded(
                 child: TabBarView(children: [FriendsPage(), DiscoverPage()]))
           ],
         ),

@@ -8,7 +8,7 @@ class DateController extends GetxController {
   void getDay() {
     DateTime today = DateTime.now();
     DateTime tenDaysAgo = today.subtract(const Duration(days: 10));
-    for (int i = 0; i < 10; i++) {
+    for (int i = 1; i < 14; i++) {
       DateTime date = tenDaysAgo.add(Duration(days: i));
       lastTenDays.add(date.day);
       lastTenDaysName.add(DateFormat('EEEE').format(date));

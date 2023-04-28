@@ -1,8 +1,6 @@
 import 'dart:convert';
-
 import 'package:bereal/routes/routes.dart';
 import 'package:get/get.dart';
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class TextFieldController extends GetxController {
@@ -10,6 +8,9 @@ class TextFieldController extends GetxController {
   var lastName = ''.obs;
   var email = ''.obs;
   var password = ''.obs;
+  var profilePhoto =
+      'https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-512.png'.obs;
+  var userInfo = {}.obs;
 
   Future<void> register() async {
     const registerUrl = 'http://localhost:8080/api/register';
@@ -17,12 +18,12 @@ class TextFieldController extends GetxController {
       "name": name.value,
       "lastName": lastName.value,
       "email": email.value,
-      "password": password.value
+      "password": password.value,
+      "profilePhoto": profilePhoto.value
     };
     final headers = {'Content-Type': 'application/json'};
     final response = await http.post(Uri.parse(registerUrl),
         headers: headers, body: jsonEncode(registerData));
-
     if (response.statusCode == 200) {
       print(response.body);
     } else {
@@ -38,8 +39,9 @@ class TextFieldController extends GetxController {
     final response = await http.post(Uri.parse(loginUrl),
         headers: headers, body: jsonEncode(loginData));
     if (response.statusCode == 201) {
-      print(response.body);
-      debugPrint('başarılı giriş');
+      userInfo.value = jsonDecode(response.body);
+      print(userInfo.value);
+
       Get.toNamed(AppPage.main);
     } else {
       print('Error: ${response.statusCode}');

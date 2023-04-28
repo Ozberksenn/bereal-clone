@@ -1,3 +1,5 @@
+import 'package:bereal/controller/posts_controller.dart';
+import 'package:bereal/model/posts.dart';
 import 'package:bereal/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -8,8 +10,10 @@ import '../../widgets/input.dart';
 class LoginView extends StatelessWidget {
   LoginView({super.key});
   final TextFieldController inputController = Get.put(TextFieldController());
+  // PostController postController = Get.put(PostController());
   @override
   Widget build(BuildContext context) {
+    // debugPrint(postController.posts[0].postImage.toString());
     return Scaffold(
       appBar: AppBar(),
       body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [

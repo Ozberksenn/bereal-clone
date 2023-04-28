@@ -1,11 +1,17 @@
-import 'package:bereal/widgets/story_card_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '../../controller/posts_controller.dart';
+import '../../widgets/post_card_widget.dart';
 
 class FriendsPage extends StatelessWidget {
-  const FriendsPage({super.key});
+  FriendsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: StoryCardWidget());
+    PostController postController = Get.put(PostController());
+    // ignore: unrelated_type_equality_checks
+    return Obx(() => postController.isLoading == true
+        ? Scaffold(body: postCard())
+        : const Center(child: CircularProgressIndicator()));
   }
 }
