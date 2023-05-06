@@ -4,15 +4,13 @@ import 'package:bereal/pages/profile/profile.dart';
 import 'package:get/get.dart';
 
 import '../pages/home/main.dart';
-import '../pages/map.dart';
 
 class AppPage {
   static List<GetPage> routes = [
     GetPage(name: login, page: () => LoginView()),
     GetPage(name: register, page: () => RegisterView()),
-    GetPage(name: main, page: () => const MainPage()),
+    GetPage(name: main, page: () => MainPage()),
     GetPage(name: profile, page: () => ProfileView()),
-    GetPage(name: mapdeneme, page: () => const MapDeneme())
   ];
 
   static getLogin() => login;

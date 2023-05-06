@@ -12,9 +12,11 @@ ListView postCard() {
   return ListView.builder(
       itemCount: postController.postData.length,
       itemBuilder: ((context, index) {
-        dynamic startTime = postController.postData[index].createdAt;
+        dynamic startTime =
+            postController.postData[index].createdAt; // createdAt info
         DateTime parse = DateTime.parse(startTime);
-        String nowTime = DateFormat.Hm().format(parse);
+        String nowTime =
+            DateFormat.Hm().format(parse); // createdAt hours format.
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 14.0),
           child: Column(children: [

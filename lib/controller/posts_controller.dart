@@ -23,7 +23,7 @@ class PostController extends GetxController {
         List jsonData = json['data'];
         postData.value =
             List<postModel>.from(jsonData.map((e) => postModel.fromJson(e)));
-        Timer(Duration(seconds: 2), () {
+        Timer(const Duration(seconds: 2), () {
           isLoading.value = true;
         });
         print(isLoading);
